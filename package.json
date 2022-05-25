@@ -1,0 +1,22 @@
+{
+  "name": "pokedex",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "start:script:extract:cluster": "node src/scripts/extract-pokemon-info-from-site-cluster.js",
+    "start:script:extract": "node src/scripts/extract-pokemon-info-from-site.js",
+    "start:script:abilities": "node src/scripts/extract-pokemon-abilities.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.11",
+    "node-fetch": "^3.2.4",
+    "puppeteer": "^14.1.1",
+    "puppeteer-cluster": "^0.23.0"
+  }
+}
