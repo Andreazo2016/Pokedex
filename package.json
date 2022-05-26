@@ -2,13 +2,19 @@
   "name": "pokedex",
   "version": "1.0.0",
   "description": "",
-  "type": "module",
+  "type": "commonjs",
   "main": "index.js",
   "scripts": {
     "start": "node src/index.js",
     "start:script:extract:cluster": "node src/scripts/extract-pokemon-info-from-site-cluster.js",
     "start:script:extract": "node src/scripts/extract-pokemon-info-from-site.js",
-    "start:script:abilities": "node src/scripts/extract-pokemon-abilities.js"
+    "start:script:abilities": "node src/scripts/extract-pokemon-abilities.js",
+    "create:migration": "npx sequelize-cli model:generate --name $NAME --attributes ATTRIBUTES",
+    "run:migration": "npx sequelize-cli db:migrate",
+    "undo:migration": "npx sequelize-cli db:migrate:undo",
+    "create:seed": "npx sequelize-cli seed:generate --name",
+    "run:seed": "npx sequelize-cli db:seed:all",
+    "undo:seed": "npx sequelize-cli db:seed:undo"
   },
   "keywords": [],
   "author": "",
@@ -16,7 +22,13 @@
   "dependencies": {
     "cheerio": "^1.0.0-rc.11",
     "node-fetch": "^3.2.4",
+    "pg": "^8.7.3",
+    "pg-hstore": "^2.3.4",
     "puppeteer": "^14.1.1",
-    "puppeteer-cluster": "^0.23.0"
+    "puppeteer-cluster": "^0.23.0",
+    "sequelize": "^6.20.0"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.4.1"
   }
 }
